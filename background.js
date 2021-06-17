@@ -15,3 +15,9 @@ chrome.runtime.onConnect.addListener((port) => {
         });
     }
 });
+
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    if (message === 'publish-trade') {
+        sendResponse();
+    }
+  });

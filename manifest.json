@@ -8,13 +8,12 @@
         }
     },
     "content_scripts": [{
-        "all_frames": true,
         "js": [ "content.js" ],
-        "matches": [ "*://*/*" ]
+        "matches": [ "https://kite.zerodha.com/*" ]
     }],
     "devtools_page": "index.html",
     "manifest_version": 2,
-    "name": "Sample Extension",
+    "name": "ProStockAlert",
     "version": "1.0.0",
     "web_accessible_resources": [
         "injected.js"
