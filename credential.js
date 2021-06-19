@@ -1,4 +1,4 @@
-export default firebaseConfig = {
+export const firebaseConfig = {
     apiKey: "AIzaSyBrxa7WXTaoIl1bu_BxKTEfHj8zSCmbZcg",
     authDomain: "prostockalert.firebaseapp.com",
     databaseURL: "https://prostockalert.firebaseio.com",

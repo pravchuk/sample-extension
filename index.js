@@ -1,4 +1,4 @@
-chrome.runtime.connect({ name: "sample-extension" });
+chrome.runtime.connect({ name: "psa-chrome-ext" });
 
 chrome.devtools.panels.create(
     "Sample Extension",

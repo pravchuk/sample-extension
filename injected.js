@@ -1,3 +1,5 @@
+const extensionId = "phdilddckcniecokckhbpmlaobnlkljh";
+
 window.__SAMPLE_EXTENSION_NAMESPACE__ = {
     getElementTree() {
         return {
@@ -36,12 +38,28 @@ window.__SAMPLE_EXTENSION_NAMESPACE__ = {
 
 window.__PSA_NAMESPACE__ = {
     traded(buyOrSell){
-        alert(`You just traded, ${buyOrSell}`);
+        //get the trade deets
+        const ticker = document.querySelector('.name').innerText;
+        const qty = document.querySelector("[label='Qty.']").value;
+        const isMarketOrder = document.querySelector("[label='Market']").checked;
+        let price = -1;
+        if(!isMarketOrder){
+            price = document.querySelector("[label='Price']").value;
+        }
+        const msg = {
+            type: 'publish-trade',
+            ticker,
+            qty,
+            isMarketOrder,
+            price,
+            time
+        }
         //make call to firebase
-        chrome.runtime.sendMessage('publish-trade', (response) => {
+        chrome.runtime.sendMessage(extensionId, msg, (response) => {
             console.log('received user data', response);
-            alert("Published trade!");
+            // console.log("Published trade!");
         });
+        console.log(`You just traded, ${buyOrSell}`);
     },
     
     checkIfSubmitButton(element){

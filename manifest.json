@@ -1,6 +1,6 @@
 {
     "background": {
-        "scripts": [ "background.js" ]
+        "page": "background.html"
     },
     "browser_action": {
         "default_icon": {
@@ -21,5 +21,15 @@
     "permissions":[
         "identity"
     ],
-    "content_security_policy":"script-src 'self' https://www.gstatic.com/ https://*.firebaseio.com https://www.googleapis.com; object-src 'self'"
+    "content_security_policy":"script-src 'self' https://www.gstatic.com/ https://*.firebaseio.com https://www.googletagmanager.com https://www.googleapis.com; object-src 'self'",
+    "externally_connectable": {
+        "ids": ["phdilddckcniecokckhbpmlaobnlkljh"],
+        "matches": ["https://kite.zerodha.com/*"],
+        "accepts_tls_channel_id": false
+    },
+    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAouh1HmAlMsI6hHk3MnTaMd8g1h6YXuTwDhxspikcDL9r+HVmvp2Igmad54DI/fB7WWY7Ki5/PO67rObarmkc3dcLUy2oLW4Td9Ck6jX0KuFOItfKvDmShOH5N5bPoyhJP+ESpsfEm/imyi3YxMvS02bHlSKxZFUMD7K/acDUaTLTCgtvZaXhZFbAI3GauMWQKC1GolD3GZPQx91Lcl0fY362RxfIdXEXxwubIkANMFNblerbbCE3rFzFMIkNZ85TBdEfqgLgl+YamRx+XsqkcTLni6UkjHFVLn54Y0Z2EUmAqO4+KJzS+eBwpFoS70ITa9ko6E0qvdAKxEjJZ4c5NQIDAQAB",
+    "oauth2": {
+        "client_id": "714086879722-triqja8f2k47pgkml4l40749aapq9tme.apps.googleusercontent.com",
+        "scopes":[""]
+    }
 }
